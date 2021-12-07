@@ -47,7 +47,7 @@ class _BmiState extends State<Bmi> {
       appBar: AppBar(
         title: Text( 'BMI CALCULATOR',style: TextStyle(color:white,fontSize: 20,fontWeight: FontWeight.w800),),
         centerTitle: true,
-        backgroundColor: blue,
+        backgroundColor: red,
         backwardsCompatibility: false,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarIconBrightness: Brightness.light
@@ -77,7 +77,7 @@ class _BmiState extends State<Bmi> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: is_male? blue:white,
+                              color: is_male? red:white,
                               borderRadius: BorderRadius.circular(value_of_border_radies),
                             ),
                             child: Column(
@@ -114,7 +114,7 @@ class _BmiState extends State<Bmi> {
                           },
                           child: Container(
                             decoration: BoxDecoration(
-                              color: is_male? white:blue,
+                              color: is_male? white:red,
                               borderRadius: BorderRadius.circular(value_of_border_radies),
                             ),
                             child: Column(
@@ -169,7 +169,9 @@ class _BmiState extends State<Bmi> {
                       ],
                     ),
                     SizedBox(height: 10,),
-                    Slider(value: hight_of_user , max:max_of_slider,min: min_of_slider , onChanged: (value){
+                    Slider(
+                        activeColor: red,
+                        value: hight_of_user , max:max_of_slider,min: min_of_slider , onChanged: (value){
                       setState(() {
 
                         hight_of_user=value;
@@ -209,6 +211,7 @@ class _BmiState extends State<Bmi> {
                                           child: Icon(Icons.add),
                                           mini: true,
                                           heroTag: 'one',
+                                          backgroundColor: red,
                                           onPressed: (){
                                             setState(() {
                                               weight++;
@@ -221,6 +224,7 @@ class _BmiState extends State<Bmi> {
                                           child: Icon(Icons.remove),
                                           mini: true,
                                           heroTag: 'two',
+                                          backgroundColor: red,
                                           onPressed: (){
                                             setState(() {
                                               weight--;
@@ -257,6 +261,7 @@ class _BmiState extends State<Bmi> {
                                           child: Icon(Icons.add),
                                           mini: true,
                                           heroTag: 'three',
+                                          backgroundColor: red,
                                           onPressed: (){
                                             setState(() {
                                               age++;
@@ -268,6 +273,7 @@ class _BmiState extends State<Bmi> {
                                         child: FloatingActionButton(
                                           child: Icon(Icons.remove),
                                           mini: true,
+                                          backgroundColor: red,
                                           heroTag: 'four',
                                           onPressed: (){
                                             setState(() {
@@ -298,7 +304,7 @@ class _BmiState extends State<Bmi> {
               child: RaisedButton(
                 padding: EdgeInsets.all(padding_of_container),
                   child: Text('Calculate',style: TextStyle(color: black,fontSize: 20,fontWeight: FontWeight.bold),),
-                  color: Colors.blue,
+                  color: Colors.red,
                   onPressed: (){
                   setState(() {
                   double result= weight /pow(t/100, 2);

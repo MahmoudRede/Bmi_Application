@@ -12,26 +12,20 @@ class Search extends StatelessWidget {
   Color black=Color.fromRGBO(52, 51, 51, 1);
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (BuildContext context) => Newscubit(),
-      child: BlocConsumer<Newscubit,Appstates>(
+    return  BlocConsumer<Newscubit,Appstates>(
         builder: (context,state){
           var list=Newscubit.get(context).search;
           return Scaffold(
             appBar: AppBar(
-              title: Text('Search'),
-              backgroundColor: white,
-              elevation: 0.0,
-              backwardsCompatibility: false,
-              systemOverlayStyle: SystemUiOverlayStyle(
-                statusBarColor: white,
-                statusBarIconBrightness: Newscubit.get(context).dark,
+              title: Text('Search',style: TextStyle(color: Newscubit.get(context).b) ,
               ),
+              elevation: 0.0,
+
               titleTextStyle: TextStyle(
                   color: black,fontSize: 20,fontWeight: FontWeight.bold
               ),
               iconTheme: IconThemeData(
-                color: black,
+                color: Newscubit.get(context).b,
               ),
           ),
             body: Container(
@@ -40,13 +34,18 @@ class Search extends StatelessWidget {
                     children: [
                       TextFormField(
                         style: TextStyle(
+                          color: Newscubit.get(context).b,
                   fontSize: 15,fontWeight: FontWeight.bold
             ),
                         decoration: InputDecoration(
                           labelText: "Search",
-                          labelStyle: TextStyle(fontSize: 17),
+                          labelStyle: TextStyle(fontSize: 17,color: Newscubit.get(context).b),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                            borderSide: BorderSide(color: Newscubit.get(context).b,width: 2)
                           ),
                         ),
                         onChanged: (value){
@@ -61,7 +60,7 @@ class Search extends StatelessWidget {
                             separatorBuilder: (context, index) => Container(
                               width: double.infinity,
                               height: 1,
-                              color: Colors.black,
+                              color: Newscubit.get(context).b,
                             ) ,
                             itemCount: list.length),
                       ),
@@ -72,7 +71,7 @@ class Search extends StatelessWidget {
         );
         },
         listener: (context,state){},
-      ),
+
     );
   }
 }

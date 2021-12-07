@@ -24,6 +24,12 @@ class MyApp extends StatelessWidget {
             MaterialApp(
           debugShowCheckedModeBanner: false,
               theme: ThemeData(
+                scaffoldBackgroundColor: Colors.white,
+                bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                  backgroundColor: Colors.white,
+                  unselectedItemColor: Colors.grey,
+                  selectedItemColor: Colors.black
+                ),
                 appBarTheme: AppBarTheme(
                   titleSpacing: 20.0,
                   backwardsCompatibility: false,
@@ -45,7 +51,12 @@ class MyApp extends StatelessWidget {
 
                 ),
               darkTheme: ThemeData(
-                scaffoldBackgroundColor: Colors.black,
+                bottomNavigationBarTheme: BottomNavigationBarThemeData(
+                    backgroundColor: HexColor('333739'),
+                    unselectedItemColor: Colors.grey,
+                    selectedItemColor: Colors.white
+                ),
+                scaffoldBackgroundColor: HexColor('333739'),
                 appBarTheme: AppBarTheme(
                   titleSpacing: 20.0,
                   backwardsCompatibility: false,

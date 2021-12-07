@@ -3,7 +3,7 @@ import 'package:flutter_news/webview.dart';
 
 import 'bloc/cubit.dart';
 
-Widget design(context,Map model){
+  Widget design(context,Map model){
   if(model['urlToImage']!=null){
     return
       InkWell(
@@ -33,10 +33,11 @@ Widget design(context,Map model){
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Expanded(child: Text(model['title'],style: TextStyle(fontSize: 17,color: Newscubit.get(context).black),maxLines: 3,overflow: TextOverflow.ellipsis,)),
+                    Expanded(child: Text(model['title'],style: TextStyle(fontSize: 17,color: Newscubit.get(context).b),maxLines: 3,overflow: TextOverflow.ellipsis,)),
                     SizedBox(height: 10,),
-                    Text('${model['publishedAt']}',style: TextStyle(fontSize: 17,color: Newscubit.get(context).black)),
+                    Text('${model['publishedAt']}',style: TextStyle(fontSize: 17,color: Newscubit.get(context).b)),
                   ],
                 ),
               ),

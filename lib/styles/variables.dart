@@ -3,7 +3,7 @@
 
 var padding_of_container=10.0;
 var is_male= true;
-var value_of_border_radies=20.0;
+var value_of_border_radies=40.0;
 var width_of_image= 80.0;
 var height_of_image= 80.0;
 var width_of_Sizedbox= 10.0;

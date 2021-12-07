@@ -6,7 +6,6 @@ import 'package:flutter_news/bloc/state.dart';
 import 'package:flutter_news/dio.dart';
 import 'package:flutter_news/search.dart';
 
-import 'bloc/colors.dart';
 
 class MyHomePage extends StatelessWidget {
 
@@ -27,24 +26,12 @@ class MyHomePage extends StatelessWidget {
               }));
             }),
           ],
-          elevation: 0.0,
-          backwardsCompatibility: false,
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Newscubit.get(context).white,
-            statusBarIconBrightness: Newscubit.get(context).dark,
-          ),
-          titleTextStyle: TextStyle(
-              color: Newscubit.get(context).black,fontSize: 23,fontWeight: FontWeight.bold
-          ),
-          iconTheme: IconThemeData(
-            color: Newscubit.get(context).black,
-          ),
+
+
         ),
         body: Newscubit.get(context).layout[Newscubit.get(context).current_index],
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Newscubit.get(context).white,
-          selectedItemColor: Colors.deepOrange,
-          unselectedItemColor: Newscubit.get(context).black,
+
           currentIndex: Newscubit.get(context).current_index,
           onTap: (index){
             Newscubit.get(context).changebar(index);

@@ -38,6 +38,7 @@ class _ResultState extends State<Result> {
     return Scaffold(
       appBar: AppBar(
         backwardsCompatibility: false,
+        backgroundColor: red,
         systemOverlayStyle: SystemUiOverlayStyle(
             statusBarIconBrightness: Brightness.light
         ),
@@ -86,7 +87,7 @@ class _ResultState extends State<Result> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Result',style:TextStyle(fontSize: 27 ,fontWeight:FontWeight.bold,color: red),),
+                  Text('Result',style:TextStyle(fontSize: 27 ,fontWeight:FontWeight.bold,color: black),),
                   SizedBox(height: 14,),
                   Text('BMI is = $result',style:TextStyle(fontSize: 22 ,fontWeight:FontWeight.bold,color: black),),
                   SizedBox(height: height_of_Sizedbox,),
@@ -109,7 +110,7 @@ class _ResultState extends State<Result> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(height: 20,),
-                  Text('Age',style:TextStyle(fontSize: 27, fontWeight:FontWeight.bold,color: red),),
+                  Text('Age',style:TextStyle(fontSize: 27, fontWeight:FontWeight.bold,color: black),),
                   SizedBox(height: 30,),
                   Text('${age}',style:TextStyle(fontSize: 25, fontWeight:FontWeight.bold,color: black),),
                 ],
@@ -128,7 +129,7 @@ class _ResultState extends State<Result> {
                 ),
                 padding: EdgeInsets.all(padding_of_container),
                   child: Text('Back',style: TextStyle(color: white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  color: Colors.blue,
+                  color: red,
                   onPressed: (){
                     setState(() {
                       Navigator.pop(context,Bmi());

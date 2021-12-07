@@ -11,7 +11,7 @@ class DioHelper  {
 
     dio = Dio(
       BaseOptions(
-      baseUrl: 'https://ext-book.herokuapp.com/',
+      baseUrl: 'https://newsapi.org/',
       receiveDataWhenStatusError:   true,
       ),
     );
